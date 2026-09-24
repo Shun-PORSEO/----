@@ -1,0 +1,25 @@
+# Render.com の Blueprint（GitHub 連携でそのままデプロイできる）
+services:
+  - type: web
+    name: kaisha-no-kiokucho
+    runtime: node
+    plan: starter
+    region: singapore
+    buildCommand: npm ci --omit=dev
+    startCommand: node server/index.js
+    healthCheckPath: /healthz
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: MEMBER_CODES
+        sync: false
+      - key: CONSULT_FORM_URL
+        sync: false
+      - key: TRIAL_FORM_URL
+        sync: false
+      - key: CONTACT_EMAIL
+        sync: false
+      - key: NEWSLETTER_URL
+        sync: false
+      - key: PODCAST_URL
+        sync: false

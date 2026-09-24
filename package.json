@@ -1,0 +1,23 @@
+{
+  "name": "kaisha-no-kiokucho",
+  "version": "0.1.0",
+  "private": true,
+  "description": "道内社長向けAI活用SaaS「会社の記憶帳」: 会社の判断・理念・業務手順を社長のPCに残し、自社専用AIが答え、経営デザインシートを出す",
+  "type": "module",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "dev": "node --env-file-if-exists=.env --watch server/index.js",
+    "test": "node --test test/*.test.js",
+    "news:draft": "node --env-file-if-exists=.env ops/news-draft.js",
+    "news:publish": "node --env-file-if-exists=.env ops/news-draft.js --publish",
+    "consult:triage": "node --env-file-if-exists=.env ops/consult-triage.js",
+    "consult:commit": "node --env-file-if-exists=.env ops/consult-triage.js --commit"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0"
+  }
+}
