@@ -9,6 +9,7 @@
 //
 // CSVの列名は「相談内容」「会社名」「メールアドレス」「タイムスタンプ」を想定（部分一致で探す）。
 
+import '../server/env.js';
 import { readFile, writeFile, appendFile, mkdir } from 'node:fs/promises';
 import { loadConfig } from '../server/config.js';
 import { createAi } from '../server/ai.js';

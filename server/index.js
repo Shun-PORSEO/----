@@ -3,6 +3,7 @@
 // - /api/ai/* : Claude API への中継（社長のデータは保存しない・ログに出さない）
 // 依存は @anthropic-ai/sdk のみ。
 
+import './env.js';
 import http from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';

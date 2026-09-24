@@ -6,6 +6,7 @@
 //
 // 下書きには「メルマガ本文」と「ポッドキャスト台本」も含まれる。公開前に必ず人が確認する。
 
+import '../server/env.js';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { loadConfig } from '../server/config.js';
 import { createAi } from '../server/ai.js';
